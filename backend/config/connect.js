@@ -1,8 +1,13 @@
 import mysql from 'mysql2';
 
+const HOST = process.env.HOST;
+const USER = process.env.USER;
+const PASS = process.env.PASS;
+const DB = process.env.DB;
+
 export const db = mysql.createConnection({
-	host: 'localhost',
-	user: 'root',
-	password: 'r4+3cp[yi9e%t9012nefp',
-	database: 'unite',
+	host: HOST,
+	user: USER,
+	password: PASS,
+	database: DB,
 });
