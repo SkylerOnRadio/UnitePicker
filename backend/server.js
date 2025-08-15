@@ -1,14 +1,11 @@
 import express from 'express';
 import mysql from 'mysql2';
 
-const app = express();
+import { db } from './config/connect.js';
 
-const db = mysql.createConnection({
-	host: 'localhost',
-	user: 'root',
-	password: 'r4+3cp[yi9e%t9012nefp',
-	database: 'unite',
-});
+const PORT = process.env.PORT;
+
+const app = express();
 
 app.get('/', (req, res) => {
 	res.json('Hello this is the backend');
@@ -24,6 +21,6 @@ app.get('/books', (req, res) => {
 
 app.post;
 
-app.listen(3000, () => {
-	console.log('Server started.');
+app.listen(PORT, () => {
+	console.log(`Server started in port ${PORT}`);
 });
